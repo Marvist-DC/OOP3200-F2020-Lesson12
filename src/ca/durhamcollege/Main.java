@@ -6,6 +6,9 @@
 
 // Driver Class (Entry Point)
 package ca.durhamcollege;
+import ca.durhamcollege.utility.RandomVector;
+import ca.durhamcollege.utility.Vector2D;
+
 import java.util.Scanner;
 import java.util.Vector;
 

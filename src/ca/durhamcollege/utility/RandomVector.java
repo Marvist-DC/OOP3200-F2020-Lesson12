@@ -4,7 +4,7 @@
   Program Name: Lesson 11 (ICE)
  */
 
-package ca.durhamcollege;
+package ca.durhamcollege.utility;
 
 import java.util.Random;
 
