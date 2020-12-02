@@ -1,7 +1,7 @@
 /*
   Author: Domenic Catalano
-  Date: 13 November 2020
-  Program Name: Lesson 10 (ICE)
+  Date: December 02, 2020
+  Program Name: Lesson 12 (ICE)
  */
 
 package ca.durhamcollege.utility;
@@ -9,8 +9,8 @@ package ca.durhamcollege.utility;
 public class Vector2D
 {
     // PRIVATE INSTANCE VARIABLES
-    private float x;
-    private float y;
+    protected float x;
+    protected float y;
 
     // PUBLIC PROPERTIES (MUTATORS & ACCESSORS)
     public float getX()
@@ -96,7 +96,7 @@ public class Vector2D
 
     public float getMagnitude()
     {
-        return (float)(Math.sqrt(this.getX() * this.getX() + this.getY() * this.getY()));
+        return (float)(Mathf.Sqrt(this.getX() * this.getX() + this.getY() * this.getY()));
     }
 
     public float getSqrMagnitude()
@@ -197,6 +197,21 @@ public class Vector2D
         final var delta_x = (double)(b.getX()) - (double)(a.getX());
         final var delta_y = (double)(b.getY()) - (double)(a.getY());
 
-        return (float)(Math.sqrt(delta_x * delta_x + delta_y * delta_y));
+        return (float)(Mathf.Sqrt(delta_x * delta_x + delta_y * delta_y));
+    }
+
+    public static final Vector2D random(final Vector2D start, final Vector2D end)
+    {
+        // generate random Y value
+        float minX = Mathf.Min(start.getX(), end.getX());
+        float maxX = Mathf.Max(start.getX(), end.getX());
+        float randomX = Mathf.RandomRange(minX, maxX);
+
+        // generate random X value
+        float minY = Mathf.Min(start.getY(), end.getY());
+        float maxY = Mathf.Max(start.getY(), end.getY());
+        float randomY = Mathf.RandomRange(minY, maxY);
+
+        return new Vector2D(randomX, randomY);
     }
 }
